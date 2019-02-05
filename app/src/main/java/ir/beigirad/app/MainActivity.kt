@@ -1,18 +1,17 @@
 package ir.beigirad.app
 
 import androidx.fragment.app.Fragment
-import dagger.android.AndroidInjection
 import ir.beigirad.app.features.countries.CountriesFragment
+import ir.beigirad.app.features.detail.DetailFragment
 import ir.beigirad.app.model.Country
 import ir.beigirad.zeroapplication.bases.BaseActivity
-import ir.beigirad.zeroapplication.toast
 
 /**
  * Created by farhad-mbp on 3/18/18.
  */
 class MainActivity : BaseActivity() ,INavigationListener{
-    override fun onSelectedCountry(country: Country) {
-        toast(country.toString())
+    override fun onShowDetail(country: Country) {
+        showFragment(DetailFragment.newInstance(country))
     }
 
     override val contentView: Int

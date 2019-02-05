@@ -40,6 +40,14 @@ fun Context.toast(textRes: Int) {
     Toast.makeText(this, textRes, Toast.LENGTH_SHORT).show()
 }
 
+fun Fragment.toast(text: CharSequence) {
+    Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+}
+
+fun Fragment.toast(textRes: Int) {
+    Toast.makeText(context, textRes, Toast.LENGTH_SHORT).show()
+}
+
 fun Context.displayMetrics(): DisplayMetrics {
     val displayMetrics = DisplayMetrics()
     (this as Activity).windowManager.defaultDisplay.getMetrics(displayMetrics)
