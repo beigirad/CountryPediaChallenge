@@ -5,14 +5,14 @@ object ApplicationId {
 }
 
 object Modules {
-    val cache = ":cache"
-    val network = ":network"
-
+    val app = ":app"
     val presentation = ":presentation"
 
-    val home = ":home"
-    val login = ":login"
-    val posts = ":posts"
+    val data = ":data"
+    val remote = ":remote"
+    val cache = ":cache"
+
+    val domain = ":domain"
 }
 
 object Releases {
