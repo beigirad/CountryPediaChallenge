@@ -1,8 +1,41 @@
 import ir.beigiead.dependencies.*
 
 plugins {
-    id("kotlin")
+    id("com.android.library")
+    id("kotlin-android")
     id("kotlin-kapt")
+}
+
+android {
+    compileSdkVersion(Versions.compileSdk)
+
+    defaultConfig {
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
+    }
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+        getByName("debug") {
+        }
+    }
+
+    flavorDimensions("default")
+    productFlavors {
+        create(Flavors.production) {
+            flavorDimensions("default")
+            buildConfigField("String", "Host", "\"https://restcountries.eu/\"")
+
+        }
+
+        create(Flavors.staging) {
+            flavorDimensions("default")
+            buildConfigField("String", "Host", "\"https://restcountries.eu/\"")
+        }
+    }
 }
 
 dependencies {
