@@ -25,4 +25,7 @@
     <string name="password_wrong">رمز عبور وارد شده اشتباه است</string>
     <string name="password_not_same">رمزهای عبور وارد شده یکسان نیست</string>
 
+    <string name="an_error_occured">در بارگذاری اطلاعات مشکلی پیش آمده</string>
+    <string name="loading_data">در حال بارگذاری</string>
+    <string name="no_showing_data">اطلاعاتی برای نمایش وجود ندارد</string>
 </resources>

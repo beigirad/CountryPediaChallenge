@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/state_progress"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/state_img_blank"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/state_message_blank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:textAppearance="@style/SecondaryDarkText.Medium"
+        tools:text="@tools:sample/full_names" />
+
+    <ImageView
+        android:id="@+id/state_img_error"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/state_message_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:textAppearance="@style/SecondaryDarkText.Medium"
+        tools:text="@tools:sample/full_names" />
+
+    <Button
+        android:id="@+id/state_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/try_again" />
+</LinearLayout>
