@@ -31,11 +31,12 @@ class MainActivity : BaseActivity() ,INavigationListener{
     }
 
     private fun showFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.main_container, fragment, fragment.javaClass.simpleName)
-            .addToBackStack(fragment.javaClass.simpleName)
-            .commit()
+        if (supportFragmentManager.findFragmentByTag(fragment.javaClass.simpleName) == null)
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_container, fragment, fragment.javaClass.simpleName)
+                    .addToBackStack(fragment.javaClass.simpleName)
+                    .commit()
     }
 
     override fun onBackPressed() {
