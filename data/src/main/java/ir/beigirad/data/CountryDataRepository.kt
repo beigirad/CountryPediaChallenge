@@ -16,10 +16,16 @@ class CountryDataRepository @Inject constructor(
     override fun getCountries(): Observable<List<Country>> {
         return cache.isCountriesCached()
             .flatMapObservable {
-                dataFactory.getDataStore(it).getCountries()
-            }
-            .doAfterNext {
-                dataFactory.getCacheStore().saveCountries(it)
+                when (it) {
+                    true ->
+                        dataFactory.getCacheStore().getCountries()
+
+                    false ->
+                        dataFactory.getRemoteStore().getCountries()
+                            .doAfterNext {
+                                dataFactory.getCacheStore().saveCountries(it).subscribe()
+                            }
+                }
             }
             .map { it.map { countryMapper.mapFromEntity(it) } }
     }
