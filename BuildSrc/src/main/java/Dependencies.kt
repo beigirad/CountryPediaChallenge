@@ -15,6 +15,11 @@ object Modules {
     val domain = ":domain"
 }
 
+object Flavors {
+    val production = "production"
+    val staging = "staging"
+}
+
 object Releases {
     private val major = 0
     private val minor = 1
