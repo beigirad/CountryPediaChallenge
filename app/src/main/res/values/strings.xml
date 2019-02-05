@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Zero Application</string>
-    <string name="app_title">زیرو اپ</string>
+    <string name="app_name">Country Pedia</string>
+    <string name="app_title">Country Pedia</string>
 
     <string name="press_back_twice">برای خروج دکمه بازگشت را فشار دهید</string>
 

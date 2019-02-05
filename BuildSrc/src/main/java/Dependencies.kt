@@ -1,7 +1,7 @@
 package ir.beigiead.dependencies
 
 object ApplicationId {
-    val id = "ir.beigirad.zeroapp"
+    val id = "ir.beigirad.countypedia"
 }
 
 object Modules {
