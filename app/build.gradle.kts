@@ -63,11 +63,11 @@ android {
 
     flavorDimensions("default")
     productFlavors {
-        create("production") {
+        create(Flavors.production) {
             flavorDimensions("default")
         }
 
-        create("staging") {
+        create(Flavors.staging) {
             flavorDimensions("default")
             versionNameSuffix = "S"
         }
