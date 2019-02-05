@@ -1,6 +1,6 @@
 import ir.beigiead.dependencies.*
+import java.io.FileInputStream
 import java.util.*
-import java.io.*
 
 plugins {
     id("com.android.application")
@@ -85,10 +85,14 @@ dependencies {
     implementation(SupportLibraries.constraintlayout)
     implementation(SupportLibraries.recyclerview)
 
-    implementation(Libraries.retrofit)
-    implementation(Libraries.gsonConverter)
-    implementation(Libraries.stethoInterceptor)
-    implementation(Libraries.rxjavaAdapter)
+
+    implementation(Libraries.lifecucleRuntime)
+    implementation(Libraries.lifecycleExtensions)
+    kapt(Libraries.lifecycleCompiler)
+
+    implementation(Libraries.rxkotlin)
+    implementation(Libraries.rxAndroid)
+
     implementation(Libraries.dagger)
     kapt(Libraries.daggerCompiler)
     implementation(Libraries.daggerAndroid)
@@ -99,4 +103,17 @@ dependencies {
 
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
+    //TODO remove room dependencies
+    implementation(Libraries.room)
+    kapt(Libraries.roomCompiler)
+    implementation(Libraries.roomRx)
+
+
+
+    implementation(project(Modules.presentation))
+    implementation(project(Modules.domain))
+    implementation(project(Modules.data))
+    implementation(project(Modules.remote))
+    implementation(project(Modules.cache))
+
 }
