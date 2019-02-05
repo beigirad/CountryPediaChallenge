@@ -10,6 +10,7 @@ import ir.beigirad.presentation.mapper.CountryViewMapper
 import ir.beigirad.presentation.model.CountryView
 import ir.beigirad.presentation.state.Resource
 import ir.beigirad.presentation.state.ResourceState
+import timber.log.Timber
 import javax.inject.Inject
 
 class CountriesViewModel @Inject constructor(
@@ -20,6 +21,7 @@ class CountriesViewModel @Inject constructor(
     private val countriesLiveData = MutableLiveData<Resource<List<CountryView>>>()
 
     override fun onCleared() {
+        Timber.d("onCleared")
         getCountries.dispose()
         super.onCleared()
     }

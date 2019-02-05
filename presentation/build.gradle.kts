@@ -33,5 +33,7 @@ dependencies {
     implementation(Libraries.lifecycleExtensions)
     kapt(Libraries.lifecycleCompiler)
 
+    implementation(Libraries.timber)
+
     implementation(project(Modules.domain))
 }
