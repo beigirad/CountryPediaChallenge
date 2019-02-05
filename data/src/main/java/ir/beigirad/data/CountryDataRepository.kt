@@ -2,18 +2,25 @@ package ir.beigirad.data
 
 import io.reactivex.Observable
 import ir.beigirad.data.mapper.CountryMapper
-import ir.beigirad.data.repository.CountryRemote
+import ir.beigirad.data.repository.CountryCache
+import ir.beigirad.data.store.CountryDataStoreFactory
 import ir.beigirad.domain.model.Country
 import ir.beigirad.domain.repository.CountryRepository
 import javax.inject.Inject
 
 class CountryDataRepository @Inject constructor(
-    private val remoteDataStore: CountryRemote,
+    private val cache: CountryCache,
+    private val dataFactory: CountryDataStoreFactory,
     private val countryMapper: CountryMapper
 ) : CountryRepository {
     override fun getCountries(): Observable<List<Country>> {
-        return remoteDataStore.getCountries()
+        return cache.isCountriesCached()
+            .flatMapObservable {
+                dataFactory.getDataStore(it).getCountries()
+            }
+            .doAfterNext {
+                dataFactory.getCacheStore().saveCountries(it)
+            }
             .map { it.map { countryMapper.mapFromEntity(it) } }
     }
-
 }
