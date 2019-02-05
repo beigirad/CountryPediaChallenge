@@ -18,7 +18,15 @@ import ir.beigirad.zeroapplication.util.SharedPrefUtils
  * Created by farhad-mbp on 7/31/17.
  */
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), HasToolbar {
+    override val toolbar: Toolbar?
+        get() = null
+    override val toolbarTitle: Int?
+        get() = null
+    override val toolbarTitleS: String?
+        get() = null
+    override val toolbarLogo: Int?
+        get() = null
 
     private lateinit var parentView: View
 
@@ -32,10 +40,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected abstract val contentView: Int
 
-    protected abstract val toolbar: Toolbar?
 
-    protected open val toolbarTitle: Int? = null
-    protected open val toolbarLogo: Int? = null
 
     protected open val hasBackConfirmation = false
 
@@ -71,15 +76,15 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected open fun initUI() {}
 
-
-    protected open fun initToolbar(hasBack: Boolean = true) {
-        if (toolbar == null)
-            return
-        toolbarTitle?.let { toolbar?.setTitle(it) }
-        toolbarLogo?.let { toolbar?.setLogo(it) }
+    override fun initToolbar(hasBack: Boolean) {
+        super.initToolbar(hasBack)
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(toolbarTitle != null)
+
+        //TODO remove redundant setTitle
+        toolbarTitle?.let { supportActionBar?.setTitle(it) }
+        toolbarTitleS?.let { supportActionBar?.setTitle(it) }
 
         if (hasBack) {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import ir.beigirad.app.R
 
@@ -12,7 +13,15 @@ import ir.beigirad.app.R
  * Created by farhad-mbp on 9/12/17.
  */
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : Fragment(),HasToolbar {
+    override val toolbar: Toolbar?
+        get() = null
+    override val toolbarTitle: Int?
+        get() = null
+    override val toolbarTitleS: String?
+        get() = null
+    override val toolbarLogo: Int?
+        get() = null
 
     protected abstract val childView: Int
 

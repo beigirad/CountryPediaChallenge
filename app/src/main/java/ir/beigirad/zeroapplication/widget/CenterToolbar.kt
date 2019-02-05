@@ -71,26 +71,22 @@ class CenterToolbar : Toolbar {
     override fun setLogo(drawable: Drawable?) {
         super.setLogo(null)
         _imgView.setImageDrawable(drawable)
-        requestLayout()
     }
 
     override fun setLogo(resId: Int) {
         super.setLogo(null)
         _imgView.setImageResource(resId)
-        requestLayout()
     }
 
     override fun setTitle(title: CharSequence?) {
         super.setTitle(null)
         _titleTextView.text = title
-        requestLayout()
 
     }
 
     override fun setTitle(resId: Int) {
         super.setTitle(null)
         _titleTextView.text = title
-        requestLayout()
     }
 
     private fun getScreenSize(): Point {
