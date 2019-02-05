@@ -48,7 +48,7 @@ abstract class BaseActivity : AppCompatActivity(), HasToolbar {
         super.onCreate(savedInstanceState)
         setContentView(contentView)
 
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+//        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
 
         initVariables()

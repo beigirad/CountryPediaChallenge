@@ -36,6 +36,7 @@ abstract class BaseFragment : Fragment(),HasToolbar {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initToolbar()
         initUI()
     }
 
