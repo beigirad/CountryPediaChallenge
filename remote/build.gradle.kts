@@ -50,6 +50,7 @@ dependencies {
     implementation(Libraries.chuckInterceptor)
     implementation(Libraries.loggingInterceptor)
 
+    implementation(Libraries.timber)
 
     implementation(project(Modules.data))
 }

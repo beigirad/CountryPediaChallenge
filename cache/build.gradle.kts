@@ -33,5 +33,7 @@ dependencies {
     kapt(Libraries.roomCompiler)
     implementation(Libraries.roomRx)
 
+    implementation(Libraries.timber)
+
     implementation(project(Modules.data))
 }
