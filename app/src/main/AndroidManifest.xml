@@ -14,10 +14,13 @@
             tools:ignore="GoogleAppIndexingWarning">
         
         <activity android:name=".MainActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.Splash" />
 
         <activity-alias
                 android:name="Launcher"
-                android:targetActivity=".MainActivity">
+            android:targetActivity=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
