@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">15sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xlarge">24sp</dimen>
+
+    <dimen name="button_font_padding">4dp</dimen>
+    <dimen name="button_side_padding">8dp</dimen>
+    <dimen name="button_default_height">36dp</dimen>
+    <dimen name="button_radius">4dp</dimen>
+
+    <item name="dialog_width_percent" type="dimen">85%</item>
+</resources>

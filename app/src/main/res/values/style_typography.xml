@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TypographyStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/icons_active</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/icons</item>
+        <item name="colorControlActivated">@color/icons_active</item>
+    </style>
+
+    <style name="PrimaryDarkText" parent="TypographyStyle">
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="SecondaryDarkText" parent="TypographyStyle">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+
+    <style name="LightText" parent="TypographyStyle">
+        <item name="android:textColor">@color/primary_text_light</item>
+    </style>
+
+
+    //  *********** NORMAL STYLE ***********
+    //  Primary Color
+    <style name="PrimaryDarkText.Large">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="PrimaryDarkText.Medium">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+    <style name="PrimaryDarkText.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    //  Secondary Color
+    <style name="SecondaryDarkText.Large">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="SecondaryDarkText.Medium">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+    <style name="SecondaryDarkText.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    //  Light Color
+    <style name="LightText.Large">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+    <style name="LightText.Medium">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+    <style name="LightText.Small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    //  *********** BOLD STYLE ***********
+    //  Primary Color
+    <style name="PrimaryDarkText.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="PrimaryDarkText.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="PrimaryDarkText.Small.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    //  Secondary Color
+    <style name="SecondaryDarkText.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SecondaryDarkText.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SecondaryDarkText.Small.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    //  Light Color
+    <style name="LightText.Large.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LightText.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LightText.Small.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
