@@ -89,6 +89,11 @@ dependencies {
     implementation(Libraries.gsonConverter)
     implementation(Libraries.stethoInterceptor)
     implementation(Libraries.rxjavaAdapter)
+    implementation(Libraries.dagger)
+    kapt(Libraries.daggerCompiler)
+    implementation(Libraries.daggerAndroid)
+    kapt(Libraries.daggerAndroidProcessor)
+    implementation(Libraries.daggerAndroidSupport)
 
     implementation(Libraries.timber)
 
