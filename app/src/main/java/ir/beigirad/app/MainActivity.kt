@@ -1,25 +1,49 @@
 package ir.beigirad.app
 
-import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import dagger.android.AndroidInjection
+import ir.beigirad.app.features.countries.CountriesFragment
+import ir.beigirad.app.model.Country
 import ir.beigirad.zeroapplication.bases.BaseActivity
-import kotlinx.android.synthetic.main.app_bar.*
+import ir.beigirad.zeroapplication.toast
 
 /**
  * Created by farhad-mbp on 3/18/18.
  */
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity() ,INavigationListener{
+    override fun onSelectedCountry(country: Country) {
+        toast(country.toString())
+    }
+
     override val contentView: Int
         get() = R.layout.activity_main
-    override val toolbar: Toolbar?
-        get() = app_toolbar
 
-    override val toolbarTitle: Int?
-        get() = R.string.app_title
     override val hasBackConfirmation: Boolean
         get() = true
 
-    override fun initToolbar(hasBack: Boolean) {
-        super.initToolbar(hasBack = false)
+
+    override fun initVariables() {
+        super.initVariables()
+    }
+
+    override fun initUI() {
+        super.initUI()
+        showFragment(CountriesFragment.newInstance())
+    }
+
+    private fun showFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.main_container, fragment, fragment.javaClass.simpleName)
+            .addToBackStack(fragment.javaClass.simpleName)
+            .commit()
+    }
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 1)
+            supportFragmentManager.popBackStack()
+        else
+            super.onBackPressed()
     }
 
 
