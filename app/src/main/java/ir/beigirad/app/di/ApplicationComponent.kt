@@ -5,10 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import ir.beigirad.app.CountryApplication
-import ir.beigirad.app.di.module.ApplicationModule
-import ir.beigirad.app.di.module.CacheModule
-import ir.beigirad.app.di.module.RemoteModule
-import ir.beigirad.app.di.module.UiModule
+import ir.beigirad.app.di.module.*
 import javax.inject.Singleton
 
 @Singleton
@@ -17,6 +14,7 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ApplicationModule::class,
         UiModule::class,
+        DataModule::class,
         RemoteModule::class,
         CacheModule::class]
 )
