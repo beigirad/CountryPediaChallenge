@@ -62,6 +62,7 @@ object Versions {
     val stethoInterceptor = "1.5.0"
     val chuckInterceptor = "1.1.0"
     val glide = "4.8.0"
+    val androidSvg = "1.2.1"
     val rxpaper = "1.2.0"
     val moshi = "1.4.0"
     val lifecycle = "2.0.0"
@@ -103,6 +104,7 @@ object Libraries {
 
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    val androidSvg = "com.caverock:androidsvg:${Versions.androidSvg}"
 
     val rxpaper = "com.github.pakoito:RxPaper2:${Versions.rxpaper}"
     val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"

@@ -103,6 +103,8 @@ dependencies {
 
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
+    implementation(Libraries.androidSvg)
+
     //TODO remove room dependencies
     implementation(Libraries.room)
     kapt(Libraries.roomCompiler)

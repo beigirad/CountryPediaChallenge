@@ -27,7 +27,7 @@ fun ViewGroup.inflate(resource: Int): View {
 
 fun ImageView.loadUrl(url: String?) {
     Glide.with(this)
-//        .applyDefaultRequestOptions(RequestOptions().placeholder(R.mipmap.img_pleceholder))
+        .applyDefaultRequestOptions(RequestOptions().placeholder(R.mipmap.ic_launcher))
         .load(url)
         .into(this)
 }

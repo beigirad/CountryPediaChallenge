@@ -7,6 +7,7 @@ import ir.beigirad.app.R
 import ir.beigirad.app.model.Country
 import ir.beigirad.zeroapplication.bases.BaseVH
 import ir.beigirad.zeroapplication.inflate
+import ir.beigirad.zeroapplication.loadUrl
 import kotlinx.android.synthetic.main.item_country.view.*
 import javax.inject.Inject
 
@@ -47,7 +48,7 @@ class CountriesAdapter @Inject constructor() : RecyclerView.Adapter<BaseVH>() {
 
         override fun bind() {
             list[adapterPosition].apply {
-//                img.loadUrl(flagUrl)
+                img.loadUrl(flagUrl)
                 title.text = name
                 sub.text = population.toString()
             }
