@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.content_detail.*
 
 class DetailFragment : BaseFragment() {
 
+    // This class created just for having 2 fragment :)
+
     override val childView: Int
         get() = R.layout.fragment_detail
 
