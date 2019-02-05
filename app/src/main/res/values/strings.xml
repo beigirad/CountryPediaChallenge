@@ -28,4 +28,6 @@
     <string name="an_error_occured">در بارگذاری اطلاعات مشکلی پیش آمده</string>
     <string name="loading_data">در حال بارگذاری</string>
     <string name="no_showing_data">اطلاعاتی برای نمایش وجود ندارد</string>
+    <string name="countries_list">لیست کشورها</string>
+
 </resources>
