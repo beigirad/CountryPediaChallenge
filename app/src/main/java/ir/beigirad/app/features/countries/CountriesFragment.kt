@@ -17,14 +17,19 @@ import ir.beigirad.presentation.state.Resource
 import ir.beigirad.presentation.state.ResourceState
 import ir.beigirad.presentation.viewmodel.CountriesViewModel
 import ir.beigirad.zeroapplication.bases.BaseFragment
+import ir.beigirad.zeroapplication.toast
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.content_countries.*
 import timber.log.Timber
 import javax.inject.Inject
 
 class CountriesFragment : BaseFragment(), CountrySelectListener {
+    override fun onLongPressCountry(selected: Country) {
+        toast("Population : ${selected.population}")
+    }
+
     override fun onSelectCountry(selected: Country) {
-        listener?.onSelectedCountry(selected)
+        listener?.onShowDetail(selected)
     }
 
     override val childView: Int
@@ -76,9 +81,9 @@ class CountriesFragment : BaseFragment(), CountrySelectListener {
         countries_ry.adapter = adapter
         countries_ry.layoutManager = LinearLayoutManager(context)
 
-//        countries_ry_state.setRetryListener {
-//            viewModel.fetchCountries()
-//        }
+        countries_ry_state.setRetryListener {
+            viewModel.fetchCountries()
+        }
 
         viewModel.getCountries().observe(this, Observer { handleData(it) })
         viewModel.fetchCountries()
