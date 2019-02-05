@@ -87,8 +87,8 @@ abstract class BaseActivity : AppCompatActivity(), HasToolbar {
         toolbarTitleS?.let { supportActionBar?.setTitle(it) }
 
         if (hasBack) {
-            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-            supportActionBar!!.setDisplayShowHomeEnabled(true)
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            supportActionBar?.setDisplayShowHomeEnabled(true)
         }
     }
 
@@ -140,7 +140,7 @@ abstract class BaseActivity : AppCompatActivity(), HasToolbar {
         if (hasBackConfirmation && System.currentTimeMillis() - lastBackPressed > 1500)
             toast(R.string.press_back_twice)
         else
-            super.onBackPressed()
+            finish()
         lastBackPressed = System.currentTimeMillis()
 
     }
